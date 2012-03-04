@@ -80,5 +80,19 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.0.1.Final</version>
         </dependency>  
+        
+        <!-- Postgresql 9.1 -->
+        <dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+		</dependency>
+
+		<!-- HSQLDB 2.2.8 -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.2.8</version>
+		</dependency>
 	</dependencies>
 </project>
