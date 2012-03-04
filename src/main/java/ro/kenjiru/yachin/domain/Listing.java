@@ -2,7 +2,13 @@ package ro.kenjiru.yachin.domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Listing {
+	@Id @GeneratedValue
 	private Long id;
 	private String title;
 	private Date submitDate;
