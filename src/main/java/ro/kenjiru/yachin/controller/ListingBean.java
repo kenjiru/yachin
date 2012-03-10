@@ -1,4 +1,4 @@
-package ro.kenjiru.yachin.controler;
+package ro.kenjiru.yachin.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -12,6 +12,7 @@ import ro.kenjiru.yachin.service.ListingService;
 public class ListingBean {
 	@Autowired
 	private ListingService listingService;
+	@Autowired
 	private Listing listing;
 
 	public ListingService getListingService() {
