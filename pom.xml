@@ -55,6 +55,21 @@
 			<version>3.0.6.RELEASE</version>
 		</dependency>
 		
+		<!-- Spring logging dependency. -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+			<scope>runtime</scope>
+		</dependency>
+		
 		<!-- JSF 2 dependencies. -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
