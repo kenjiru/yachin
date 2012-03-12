@@ -9,12 +9,10 @@ import ro.kenjiru.yachin.domain.Listing;
 
 @Repository
 public class HibernateListingDao implements ListingDao {
+	@Autowired(required=true)
 	private SessionFactory sessionFactory;
 
-	@Autowired
-	public HibernateListingDao(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
+	public HibernateListingDao() { }
 
 	public Session currentSession() {
 		return sessionFactory.getCurrentSession();

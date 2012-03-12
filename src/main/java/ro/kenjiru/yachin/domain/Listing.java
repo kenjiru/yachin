@@ -1,5 +1,6 @@
 package ro.kenjiru.yachin.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Listing {
+public class Listing implements Serializable {
 	@Id @GeneratedValue
 	private Long id;
 	@Column
