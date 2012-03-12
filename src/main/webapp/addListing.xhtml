@@ -7,12 +7,21 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title>JSF 2.0 Hello World</title>
+	<title>Add Listing</title>
 </h:head>
 <h:body>
-	<h3>JSF 2.0 Hello World Example - welcome.xhtml</h3>
+	<h3>Add a new Listing</h3>
 	<h:form>
-		Welcome <h:outputText value="#{helloBean.name}" />
+		<h:panelGrid columns="2">
+			<h:outputLabel for="title" value="Title" />
+			<h:inputText id="title" value="#{listingBean.listing.title}" />
+			
+			<h:outputLabel for="noRooms" value="Number of Rooms" />
+			<h:inputText id="noRooms" value="#{listingBean.listing.noRooms}" />
+			
+			<h:outputText value=" "/>
+			<h:commandButton id="submitButton" value="Save" action="#{listingBean.addListing}" />
+		</h:panelGrid>
 	</h:form>
 </h:body>
 </html>
