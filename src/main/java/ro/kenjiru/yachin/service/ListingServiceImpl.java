@@ -2,16 +2,18 @@ package ro.kenjiru.yachin.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ro.kenjiru.yachin.domain.Listing;
 import ro.kenjiru.yachin.persistence.ListingDao;
 
 @Service
 public class ListingServiceImpl implements ListingService {
-	@Autowired
+	@Autowired(required=true)
 	private ListingDao listingDao;
 	
 	@Override
+	@Transactional
 	public void createListing(Listing listing) {
 		listingDao.addListing(listing);
 	}
