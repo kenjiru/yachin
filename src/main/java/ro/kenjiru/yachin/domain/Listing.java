@@ -6,17 +6,25 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "listings")
 public class Listing implements Serializable {
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
-	@Column
+	
+	@Column(name = "title")
 	private String title;
-	@Column
+	
+	@Column(name = "submit_date")
 	private Date submitDate;
-	@Column
+	
+	@Column(name = "no_rooms")
 	private Integer noRooms;
 
 	public Listing() {}

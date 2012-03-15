@@ -8,7 +8,7 @@ import ro.kenjiru.yachin.domain.Listing;
 import ro.kenjiru.yachin.service.ListingService;
 
 @Component
-@Scope("session")
+@Scope("request")
 public class ListingBean {
 	@Autowired
 	private ListingService listingService;

@@ -13,7 +13,7 @@ public class ListingServiceImpl implements ListingService {
 	private ListingDao listingDao;
 	
 	@Override
-	@Transactional
+	@Transactional(readOnly=false)
 	public void createListing(Listing listing) {
 		listingDao.addListing(listing);
 	}
