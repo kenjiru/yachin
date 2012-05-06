@@ -1,5 +1,7 @@
 package ro.kenjiru.yachin.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,5 +18,11 @@ public class ListingServiceImpl implements ListingService {
 	@Transactional(readOnly=false)
 	public void createListing(Listing listing) {
 		listingDao.addListing(listing);
+	}
+
+	@Override
+	@Transactional
+	public List<Listing> getAll() {
+		return listingDao.getAll();
 	}
 }

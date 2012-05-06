@@ -1,5 +1,7 @@
 package ro.kenjiru.yachin.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -35,5 +37,9 @@ public class ListingBean {
 		listingService.createListing(listing);
 		
 		return null;
+	}
+	
+	public List<Listing> getAllListings() {
+		return listingService.getAll();
 	}
 }
