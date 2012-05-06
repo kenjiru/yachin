@@ -14,8 +14,7 @@ import ro.kenjiru.yachin.service.ListingService;
 public class ListingBean {
 	@Autowired
 	private ListingService listingService;
-	@Autowired
-	private Listing listing;
+	private Listing listing = new Listing();
 
 	public ListingService getListingService() {
 		return listingService;

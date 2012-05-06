@@ -40,6 +40,4 @@
     </bean>
     
     <tx:annotation-driven transaction-manager="txManager"/>
-    
-    <bean id="listing" class="ro.kenjiru.yachin.domain.Listing" />
 </beans>
