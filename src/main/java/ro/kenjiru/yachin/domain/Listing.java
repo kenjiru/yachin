@@ -11,20 +11,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "listings")
+@Table(name = "LISTINGS")
 public class Listing implements Serializable {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "title")
+	@Column(name = "TITLE")
 	private String title;
 	
-	@Column(name = "submit_date")
+	@Column(name = "SUBMIT_DATE")
 	private Date submitDate;
 	
-	@Column(name = "no_rooms")
+	@Column(name = "NO_ROOMS")
 	private Integer noRooms;
 
 	public Listing() {}
