@@ -35,7 +35,7 @@ public class ListingBean {
 	public String addListing() {
 		listingService.createListing(listing);
 		
-		return null;
+		return "viewListing";
 	}
 	
 	public List<Listing> getAllListings() {
