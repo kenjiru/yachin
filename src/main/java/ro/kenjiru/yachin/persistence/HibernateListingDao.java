@@ -17,13 +17,19 @@ public class HibernateListingDao implements ListingDao {
 
 	public HibernateListingDao() { }
 
+	@Override
 	public Session currentSession() {
 		return sessionFactory.getCurrentSession();
 	}
 
+	@Override
 	public void addListing(Listing listing) {
 		currentSession().saveOrUpdate(listing);
-		currentSession().flush();
+	}
+	
+	@Override
+	public void deleteListing(Listing listing) {
+		currentSession().delete(listing);
 	}
 
 	@Override

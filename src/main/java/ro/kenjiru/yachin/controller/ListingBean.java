@@ -33,9 +33,15 @@ public class ListingBean {
 	}
 	
 	public String addListing() {
-		listingService.createListing(listing);
+		listingService.addListing(listing);
 		
 		return "viewListing";
+	}
+	
+	public String deleteListing(Listing listingToDelete) {
+		listingService.deleteListing(listingToDelete);
+		
+		return "viewAllListings";
 	}
 	
 	public List<Listing> getAllListings() {
