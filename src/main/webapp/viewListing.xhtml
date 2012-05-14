@@ -13,6 +13,9 @@
 	<h3>Here are the details of a listing</h3>
 	<h:form>
 		<h:panelGrid columns="2">
+			<h:outputLabel for="id" value="Id" />
+			<h:outputText id="id" value="#{listingBean.listing.id}" />
+			
 			<h:outputLabel for="title" value="Title" />
 			<h:outputText id="title" value="#{listingBean.listing.title}" />
 			

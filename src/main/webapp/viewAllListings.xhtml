@@ -16,6 +16,13 @@
 			<h:dataTable var="listing" value="#{listingBean.getAllListings()}">
 				<h:column>
 					<f:facet name="header">
+						<h:outputText value="Id"/>
+					</f:facet>
+					<h:outputText value="#{listing.id}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
 						<h:outputText value="Title"/>
 					</f:facet>
 					<h:outputText value="#{listing.title}"/>
