@@ -16,8 +16,8 @@ public class ListingServiceImpl implements ListingService {
 	
 	@Override
 	@Transactional(readOnly=false)
-	public void addListing(Listing listing) {
-		listingDao.addListing(listing);
+	public void saveListing(Listing listing) {
+		listingDao.saveListing(listing);
 	}
 	
 	@Override

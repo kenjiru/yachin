@@ -23,7 +23,7 @@ public class HibernateListingDao implements ListingDao {
 	}
 
 	@Override
-	public void addListing(Listing listing) {
+	public void saveListing(Listing listing) {
 		currentSession().saveOrUpdate(listing);
 	}
 	

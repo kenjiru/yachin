@@ -32,10 +32,16 @@ public class ListingBean {
 		this.listing = listing;
 	}
 	
-	public String addListing() {
-		listingService.addListing(listing);
+	public String saveListing() {
+		listingService.saveListing(listing);
 		
 		return "viewListing";
+	}
+	
+	public String editListing(Listing listing) {
+		this.listing = listing;
+		
+		return "editListing";
 	}
 	
 	public String deleteListing(Listing listingToDelete) {

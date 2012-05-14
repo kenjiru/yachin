@@ -8,7 +8,7 @@ import ro.kenjiru.yachin.domain.Listing;
 
 public interface ListingDao {
 	public Session currentSession();
-	public void addListing(Listing listing);
+	public void saveListing(Listing listing);
 	public void deleteListing(Listing listing);
 	public List<Listing> getAll();
 }
