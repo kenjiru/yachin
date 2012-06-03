@@ -3,6 +3,7 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ya="http://java.sun.com/jsf/composite/yachin"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
@@ -11,6 +12,11 @@
 	<title><ui:insert name="title"></ui:insert></title>
 </h:head>
 <h:body>
+	<ya:menu>
+		<ya:menuItem outcome="viewAllListings">Show all Listings</ya:menuItem>
+		<ya:menuItem outcome="addListing">Add Listing</ya:menuItem>
+	</ya:menu>
+	
 	<h3>
 		<ui:insert name="title"></ui:insert>
 	</h3>
