@@ -14,10 +14,14 @@
 		<h:form>
 			<h:panelGrid columns="2">
 				<h:outputLabel for="title" value="Title" />
-				<h:inputText id="title" value="#{listingBean.listing.title}" />
+				<h:inputText id="title" value="#{listingBean.listing.title}">
+					<f:validateLength minimum="3" maximum="100" />
+				</h:inputText>
 
 				<h:outputLabel for="noRooms" value="Number of Rooms" />
-				<h:inputText id="noRooms" value="#{listingBean.listing.noRooms}" />
+				<h:inputText id="noRooms" value="#{listingBean.listing.noRooms}">
+					<f:convertNumber integerOnly="true"/>
+				</h:inputText>
 
 				<h:outputText value=" " />
 				<h:commandButton id="submitButton" value="Save"
