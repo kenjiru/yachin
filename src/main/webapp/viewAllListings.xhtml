@@ -39,10 +39,9 @@
 						<f:facet name="header">
 							<h:outputText value="Actions" />
 						</f:facet>
-						<h:commandLink action="#{listingBean.deleteListing(listing)}"
-							value="Delete" /> | 
-						<h:commandLink action="#{listingBean.editListing(listing)}"
-							value="Edit" />
+                        <h:commandLink action="#{listingBean.deleteListing(listing)}"
+                                       value="Delete"/> |
+                        <h:outputLink value="editListing.xhtml?id=#{listing.id}">Edit</h:outputLink>
 					</h:column>
 				</h:dataTable>
 			</h:panelGrid>
