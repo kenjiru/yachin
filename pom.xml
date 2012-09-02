@@ -33,9 +33,7 @@
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
 					</archive>
-					<strong>
-						<archiveClasses>false</archiveClasses>
-					</strong>
+                    <archiveClasses>false</archiveClasses>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
@@ -87,6 +85,37 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springVersion}</version>
 		</dependency>
+        <!-- Spring Expression must be explicitly loaded, because the default version
+        conflicts with spring-security. -->
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+        <!-- I've explicitly included this version of Spring AOP because
+        an older version was loaded by default. -->
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
 
 		<!-- Spring logging dependency. -->
 		<dependency>
