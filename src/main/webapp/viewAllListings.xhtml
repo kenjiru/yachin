@@ -41,7 +41,8 @@
 						</f:facet>
                         <h:commandLink action="#{listingBean.deleteListing(listing)}"
                                        value="Delete"/> |
-                        <h:outputLink value="editListing.xhtml?id=#{listing.id}">Edit</h:outputLink>
+                        <h:commandLink action="#{listingBean.editListing(listing)}"
+                                       value="Edit"/>
 					</h:column>
 				</h:dataTable>
 			</h:panelGrid>
