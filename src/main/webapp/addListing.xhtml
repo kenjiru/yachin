@@ -24,8 +24,9 @@
 				</h:inputText>
 
 				<h:outputText value=" " />
-				<h:commandButton id="submitButton" value="Save"
-					action="#{listingBean.saveListing}" />
+				<h:commandButton id="submitButton" value="Save" action="#{listingBean.saveListing}" >
+					<f:param name="id" value="#{listingBean.listing.id}"/>
+				</h:commandButton>
 			</h:panelGrid>
 		</h:form>
 	</ui:define>

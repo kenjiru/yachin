@@ -7,13 +7,23 @@
                 http://www.springframework.org/schema/security
                 http://www.springframework.org/schema/security/spring-security-3.1.xsd">
     <!-- Spring Security is the default namespace here -->
-
-    <http auto-config="true">
-        <intercept-url pattern="/addListing.xhtml" access="ROLE_USER"/>
+	
+	<global-method-security secured-annotations="enabled">
+		<!-- AspectJ pointcut expression that locates our "post" method and applies security that way
+		<protect-pointcut expression="execution(* bigbank.*Service.post*(..))" access="ROLE_TELLER"/>
+		-->
+	</global-method-security>
+	
+    <http auto-config="true" use-expressions="false">
+    	<form-login login-page="/login.xhtml"
+    		default-target-url="/viewAllListings.xhtml"
+    		authentication-failure-url="/login.xhtml?login_error=1"
+    		always-use-default-target="true" />
+    	<intercept-url pattern="/addListing.xhtml" access="ROLE_USER"/>
         <intercept-url pattern="/editListing.xhtml" access="ROLE_USER"/>
+        <logout invalidate-session="true" logout-success-url="/login.xhtml"/>
     </http>
-
-    <authentication-manager>
+    <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userService"/>
     </authentication-manager>
 

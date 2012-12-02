@@ -31,4 +31,9 @@ public class ListingServiceImpl implements ListingService {
 	public List<Listing> getAll() {
 		return listingDao.getAll();
 	}
+
+	@Override
+	public Listing getById(long id) {
+		return listingDao.getById(id);
+	}
 }

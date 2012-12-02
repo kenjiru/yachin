@@ -35,7 +35,7 @@ public class ListingBean {
 	public String saveListing() {
 		listingService.saveListing(listing);
 		
-		return "viewListing";
+		return "viewListing?faces-redirect=true&amp;includeViewParams=true";
 	}
 	
 	public String editListing(Listing listing) {
@@ -52,5 +52,9 @@ public class ListingBean {
 	
 	public List<Listing> getAllListings() {
 		return listingService.getAll();
+	}
+	
+	public void loadListing() {
+		listing = listingService.getById(listing.getId());
 	}
 }
