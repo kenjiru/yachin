@@ -16,6 +16,8 @@
             <h:inputText name="j_username" id="j_username" value="#{loginBean.username}" size="40" maxlength="80"/>
             <h:outputLabel value="Password" for="j_password"/>
             <h:inputSecret name="j_password" id="j_password" value="#{loginBean.password}" size="40" maxlength="80"/>
+            <h:outputLabel value="Remember me on this computer" for="_spring_security_remember_me" />
+            <h:selectBooleanCheckbox name="_spring_security_remember_me" id="_spring_security_remember_me" value="true"/>
         </h:panelGrid>
         <h:commandButton type="submit" value="Login" id="login"/>
         <h:messages style="color: red;"/>
