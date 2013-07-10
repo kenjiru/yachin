@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<f:metadata>
+        <f:viewParam name="id" value="#{listingBean.listing.id}" />
+        <f:event type="preRenderView" listener="#{listingBean.loadListing}"/>
+</f:metadata>
+    
+<ui:composition template="/templates/layout.xhtml">
+	<ui:define name="title">Here are the details of a listing</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel for="id" value="Id" />
+				<h:outputText id="id" value="#{listingBean.listing.id}" />
+
+				<h:outputLabel for="title" value="Title" />
+				<h:outputText id="title" value="#{listingBean.listing.title}" />
+
+				<h:outputLabel for="noRooms" value="Number of Rooms" />
+				<h:outputText id="noRooms" value="#{listingBean.listing.noRooms}" />
+				
+				<h:outputLabel for="owner" value="Owner" />
+				<h:outputText id="owner" value="#{listingBean.listing.owner.username}" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
