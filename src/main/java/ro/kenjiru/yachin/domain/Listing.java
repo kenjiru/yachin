@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +28,10 @@ public class Listing implements Serializable {
 	
 	@Column(name = "NO_ROOMS")
 	private Integer noRooms;
+	
+	@ManyToOne
+	@JoinColumn(name="owner_id")
+	private User owner;
 
 	public Listing() {}
 
@@ -59,5 +65,13 @@ public class Listing implements Serializable {
 
 	public void setNoRooms(Integer noRooms) {
 		this.noRooms = noRooms;
+	}
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 }

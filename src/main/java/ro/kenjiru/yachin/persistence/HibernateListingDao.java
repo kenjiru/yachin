@@ -40,4 +40,11 @@ public class HibernateListingDao implements ListingDao {
 		// Retrieve all
 		return query.list();
 	}
+
+	@Override
+	public Listing getById(long id) {
+		return (Listing)currentSession().get(Listing.class, new Long(id));
+	}
+	
+	
 }

@@ -12,15 +12,26 @@
 	<title><ui:insert name="title"></ui:insert></title>
 </h:head>
 <h:body>
-	<ya:menu>
-		<ya:menuItem outcome="viewAllListings">Show all Listings</ya:menuItem>
-		<ya:menuItem outcome="addListing">Add Listing</ya:menuItem>
-	</ya:menu>
-	
-	<h3>
-		<ui:insert name="title"></ui:insert>
-	</h3>
 
-	<ui:insert name="content"></ui:insert>
+	<h:panelGroup>
+		<h:outputText value="Logged in as #{request.remoteUser}" />
+		<h:outputLink value="#{request.contextPath}/j_spring_security_logout"
+			style="float: right;">Logout</h:outputLink>
+	</h:panelGroup>
+	<h:panelGrid columns="2" width="100%">
+		<h:panelGroup>
+			<ya:menu>
+				<ya:menuItem outcome="/view/viewAllListings">Show all Listings</ya:menuItem>
+				<ya:menuItem outcome="/edit/addListing">Add Listing</ya:menuItem>
+			</ya:menu>
+		</h:panelGroup>
+		<h:panelGroup>
+			<h3>
+				<ui:insert name="title"></ui:insert>
+			</h3>
+
+			<ui:insert name="content"></ui:insert>
+		</h:panelGroup>
+	</h:panelGrid>
 </h:body>
 </html>
