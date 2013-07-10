@@ -14,6 +14,7 @@ import ro.kenjiru.yachin.service.ListingService;
 public class ListingBean {
 	@Autowired
 	private ListingService listingService;
+	
 	private Listing listing = new Listing();
 
 	public ListingService getListingService() {
@@ -34,20 +35,18 @@ public class ListingBean {
 	
 	public String saveListing() {
 		listingService.saveListing(listing);
-		
-		return "viewListing?faces-redirect=true&amp;includeViewParams=true";
+		return "/view/viewListing?faces-redirect=true&amp;includeViewParams=true";
 	}
 	
 	public String editListing(Listing listing) {
 		this.listing = listing;
-		
-		return "editListing";
+		return "/edit/editListing";
 	}
 	
 	public String deleteListing(Listing listingToDelete) {
 		listingService.deleteListing(listingToDelete);
 		
-		return "viewAllListings";
+		return "/view/viewAllListings";
 	}
 	
 	public List<Listing> getAllListings() {
@@ -56,5 +55,9 @@ public class ListingBean {
 	
 	public void loadListing() {
 		listing = listingService.getById(listing.getId());
+	}
+	
+	public void loadListing(Long id) {
+		listing = listingService.getById(id);
 	}
 }

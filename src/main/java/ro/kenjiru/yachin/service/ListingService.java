@@ -3,6 +3,7 @@ package ro.kenjiru.yachin.service;
 import java.util.List;
 
 import ro.kenjiru.yachin.domain.Listing;
+import ro.kenjiru.yachin.domain.User;
 
 public interface ListingService {
 	public void saveListing(Listing listing);
